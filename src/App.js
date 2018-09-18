@@ -14,7 +14,35 @@ class App extends Component {
     return (
       <div className="App">
         <Map center={position} zoom={this.state.zoom}>
-          <LeafletReactTrackPlayer />
+          <LeafletReactTrackPlayer
+            track={
+              [{
+                LOAD: 16,
+                SPEED: 3.4,
+                course: 0,
+                lat: 46.521393333333336,
+                lng: 39.77077166666667,
+                status: 1,
+                t: "180918074919000"
+              },{
+                LOAD: 16,
+                SPEED: 3.4,
+                course: 0,
+                lat: 46.52142666666666,
+                lng: 39.770603333333334,
+                status: 1,
+                t: "180918084223000"
+              },{
+                LOAD: 16,
+                SPEED: 3.4,
+                course: 0,
+                lat: 46.51617,
+                lng: 39.80417666666666,
+                status: 1,
+                t: "180918090101000"
+              }]
+            }
+          />
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
