@@ -42,6 +42,7 @@ class App extends Component {
                 t: "180918090101000"
               }]
             }
+            zoom={true}
           />
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
