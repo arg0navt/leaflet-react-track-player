@@ -7,7 +7,7 @@ class App extends Component {
   state = {
     lat: 51.99966833333333,
     lng: 81.767595,
-    zoom: 19,
+    zoom: 18,
   }
   render() {
     const position = [this.state.lat, this.state.lng]
