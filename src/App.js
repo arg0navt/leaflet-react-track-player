@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./App.css"
 import LeafletReactTrackPlayer from "components/laeflet-react-track-player"
+import L from "leaflet"
 import { Map, TileLayer } from "react-leaflet"
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
               }, {
                 LOAD: 17.47,
                 SPEED: 0,
-                course: 0,
+                course: 40,
                 lat: 51.99953166666667,
                 lng: 81.76910833333334,
                 status: 1,
@@ -48,14 +49,6 @@ class App extends Component {
                 lng: 81.76885,
                 status: 4,
                 t: "180919052256000"
-              }, {
-                LOAD: 50.75,
-                SPEED: 12.77,
-                course: 258,
-                lat: 51.999775,
-                lng: 81.76819166666667,
-                status: 4,
-                t: "180919053140000"
               }, {
                 LOAD: 50.75,
                 SPEED: 12.77,
@@ -77,6 +70,7 @@ class App extends Component {
               ]
             }
             focus={true}
+            markerIcon={"/img/mech.svg"}
           />
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
