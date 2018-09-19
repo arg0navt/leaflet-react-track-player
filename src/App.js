@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import "./App.css"
 import LeafletReactTrackPlayer from "components/laeflet-react-track-player"
-import { Map, TileLayer, Marker, Popup } from "react-leaflet"
+import { Map, TileLayer } from "react-leaflet"
 
 class App extends Component {
   state = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 51.99966833333333,
+    lng: 81.767595,
     zoom: 13,
   }
   render() {
@@ -17,42 +17,61 @@ class App extends Component {
           <LeafletReactTrackPlayer
             track={
               [{
-                LOAD: 16,
-                SPEED: 3.4,
+                LOAD: 40.88,
+                SPEED: 4.4,
                 course: 0,
-                lat: 46.521393333333336,
-                lng: 39.77077166666667,
+                lat: 51.99966833333333,
+                lng: 81.767595,
                 status: 1,
-                t: "180918074919000"
+                t: "180919050440000",
+              }, {
+                LOAD: 65.39,
+                SPEED: 8.15,
+                course: 123,
+                lat: 51.999945,
+                lng: 81.76813,
+                status: 1,
+                t: "180919051456000"
+              }, {
+                LOAD: 17.47,
+                SPEED: 0,
+                course: 0,
+                lat: 51.99953166666667,
+                lng: 81.76910833333334,
+                status: 1,
+                t: "180919051640000"
+              }, {
+                LOAD: 27.74,
+                SPEED: 0.88,
+                course: 328,
+                lat: 51.99959,
+                lng: 81.76885,
+                status: 1,
+                t: "180919052256000"
+              }, {
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 51.999775,
+                lng: 81.76819166666667,
+                status: 1,
+                t: "180919053140000"
               },{
-                LOAD: 16,
-                SPEED: 3.4,
-                course: 0,
-                lat: 46.52142666666666,
-                lng: 39.770603333333334,
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 51.999775,
+                lng: 81.76819166666667,
                 status: 1,
-                t: "180918084223000"
-              },{
-                LOAD: 16,
-                SPEED: 3.4,
-                course: 0,
-                lat: 46.51617,
-                lng: 39.80417666666666,
-                status: 1,
-                t: "180918090101000"
+                t: "180919053140000"
               }]
             }
-            zoom={true}
+            focus={true}
           />
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-          </Marker>
         </Map>
       </div>
     );
