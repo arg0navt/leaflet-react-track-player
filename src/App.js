@@ -7,7 +7,7 @@ class App extends Component {
   state = {
     lat: 51.99966833333333,
     lng: 81.767595,
-    zoom: 13,
+    zoom: 19,
   }
   render() {
     const position = [this.state.lat, this.state.lng]
@@ -46,7 +46,7 @@ class App extends Component {
                 course: 328,
                 lat: 51.99959,
                 lng: 81.76885,
-                status: 1,
+                status: 4,
                 t: "180919052256000"
               }, {
                 LOAD: 50.75,
@@ -54,17 +54,27 @@ class App extends Component {
                 course: 258,
                 lat: 51.999775,
                 lng: 81.76819166666667,
-                status: 1,
+                status: 4,
                 t: "180919053140000"
-              },{
+              }, {
                 LOAD: 50.75,
                 SPEED: 12.77,
                 course: 258,
                 lat: 51.999775,
                 lng: 81.76819166666667,
-                status: 1,
+                status: 4,
                 t: "180919053140000"
               }]
+            }
+            useMultyPolyline={true}
+            optionMultyIdxFn={function (p) {
+              return p.status;
+            }}
+            optionsMulty={
+              [
+                { color: "#b1b1b1" }, { color: "#06a9f5"}, { color: "#202020" },
+                { color: "#D10B41" }, { color: "#78c800" }
+              ]
             }
             focus={true}
           />
