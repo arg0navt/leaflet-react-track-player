@@ -6,9 +6,9 @@ import { Map, TileLayer } from "react-leaflet"
 
 class App extends Component {
   state = {
-    lat: 51.99966833333333,
-    lng: 81.767595,
-    zoom: 18,
+    lat: 47.445745,
+    lng: 40.272891666666666,
+    zoom: 15,
   }
   render() {
     const position = [this.state.lat, this.state.lng]
@@ -21,42 +21,58 @@ class App extends Component {
                 LOAD: 40.88,
                 SPEED: 4.4,
                 course: 0,
-                lat: 51.99966833333333,
-                lng: 81.767595,
+                lat: 47.445745,
+                lng: 40.272891666666666,
                 status: 1,
-                t: "180919050440000",
-              }, {
-                LOAD: 65.39,
-                SPEED: 8.15,
-                course: 123,
-                lat: 51.999945,
-                lng: 81.76813,
-                status: 1,
-                t: "180919051456000"
-              }, {
-                LOAD: 17.47,
-                SPEED: 0,
-                course: 40,
-                lat: 51.99953166666667,
-                lng: 81.76910833333334,
-                status: 1,
-                t: "180919051640000"
+                t: "180921100658000",
               }, {
                 LOAD: 27.74,
                 SPEED: 0.88,
                 course: 328,
-                lat: 51.99959,
-                lng: 81.76885,
-                status: 4,
-                t: "180919052256000"
+                lat: 47.443255,
+                lng: 40.273045,
+                status: 1,
+                t: "180921100947000"
               }, {
                 LOAD: 50.75,
                 SPEED: 12.77,
                 course: 258,
-                lat: 51.999775,
-                lng: 81.76819166666667,
+                lat: 47.443255,
+                lng: 40.2730457,
+                status: 1,
+                t: "180921100958000"
+              }, {
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 47.44325166666667,
+                lng: 40.27352,
                 status: 4,
-                t: "180919053140000"
+                t: "180921101043000"
+              }, {
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 47.4432433333333357,
+                lng: 40.274631666666664,
+                status: 4,
+                t: "180921101128000"
+              }, {
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 47.44323333333333,
+                lng: 40.276125,
+                status: 4,
+                t: "180921101228000"
+              }, {
+                LOAD: 50.75,
+                SPEED: 12.77,
+                course: 258,
+                lat: 47.44323166666667,
+                lng: 40.277606666666664,
+                status: 4,
+                t: "180921101328000"
               }]
             }
             useMultyPolyline={true}
