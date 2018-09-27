@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     lat: 47.445745,
     lng: 40.272891666666666,
-    zoom: 13,
+    zoom: 15,
   }
   render() {
     const position = [demo[0].lat, demo[0].lng]
@@ -18,7 +18,6 @@ class App extends Component {
         <Map center={position} zoom={this.state.zoom}>
           <LeafletReactTrackPlayer
             track={demo}
-            useMultyPolyline={true}
             optionMultyIdxFn={function (p) {
               return p.status;
             }}
