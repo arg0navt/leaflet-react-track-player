@@ -27,7 +27,8 @@ class App extends Component {
                 { color: "#D10B41" }, { color: "#78c800" }
               ]
             }
-            focus={true}
+            customMarker={true}
+            changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
           />
           <TileLayer
