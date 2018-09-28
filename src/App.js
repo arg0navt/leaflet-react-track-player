@@ -27,6 +27,7 @@ class App extends Component {
                 { color: "#D10B41" }, { color: "#78c800" }
               ]
             }
+            playerAndTime={false}
             customMarker={true}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
