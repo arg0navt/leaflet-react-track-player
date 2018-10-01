@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
-import "./App.css"
-import LeafletReactTrackPlayer from "components/laeflet-react-track-player"
-import L from "leaflet"
+import React, { Component } from "react";
+import "./App.css";
+import LeafletReactTrackPlayer from "components/laeflet-react-track-player";
 import demo from "./demo";
-import { Map, TileLayer } from "react-leaflet"
+import { Map, TileLayer } from "react-leaflet";
 
 class App extends Component {
   state = {
     lat: 47.445745,
     lng: 40.272891666666666,
-    zoom: 15,
-  }
+    zoom: 15
+  };
   render() {
-    const position = [demo[0].lat, demo[0].lng]
+    const position = [demo[0].lat, demo[0].lng];
     return (
       <div className="App">
         <Map center={position} zoom={this.state.zoom}>
           <LeafletReactTrackPlayer
             track={demo}
-            optionMultyIdxFn={function (p) {
+            optionMultyIdxFn={function(p) {
               return p.status;
             }}
-            optionsMulty={
-              [
-                { color: "#b1b1b1" }, { color: "#06a9f5"}, { color: "#202020" },
-                { color: "#D10B41" }, { color: "#78c800" }
-              ]
-            }
-            playerAndTime={true}
+            optionsMulty={[
+              { color: "#b1b1b1" },
+              { color: "#06a9f5" },
+              { color: "#202020" },
+              { color: "#D10B41" },
+              { color: "#78c800" }
+            ]}
+            progressFormat={"default"}
             customMarker={true}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
