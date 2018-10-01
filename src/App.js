@@ -27,7 +27,7 @@ class App extends Component {
               { color: "#D10B41" },
               { color: "#78c800" }
             ]}
-            progressFormat={"default"}
+            progressFormat={"distance"}
             customMarker={true}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
