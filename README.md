@@ -1,5 +1,5 @@
 # Leaflet-react-track-player
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
+[![Build Status](https://travis-ci.org/argonavt11/leaflet-react-track-player.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
 
 ![](https://github.com/argonavt11/leaflet-react-track-player/blob/master/public/img/demo.gif?raw=true)
 
