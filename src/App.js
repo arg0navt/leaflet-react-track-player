@@ -9,7 +9,7 @@ class App extends Component {
     lat: 47.445745,
     lng: 40.272891666666666,
     zoom: 15,
-    type: "default",
+    type: "distance",
     demo: demo
   };
   render() {
