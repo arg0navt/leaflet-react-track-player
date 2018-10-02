@@ -8,6 +8,10 @@
 
 # production
 /build
+/publick
+/config
+/scripts
+
 
 #idea
 /.idea
