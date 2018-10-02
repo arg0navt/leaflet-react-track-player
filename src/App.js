@@ -1,22 +1,26 @@
 import React, { Component } from "react";
 import "./App.css";
 import LeafletReactTrackPlayer from "components/laeflet-react-track-player";
-import demo from "./demo";
+import demo from "./demo2";
+import demo2 from "./demo";
 import { Map, TileLayer } from "react-leaflet";
 
 class App extends Component {
   state = {
     lat: 47.445745,
     lng: 40.272891666666666,
-    zoom: 15
+    zoom: 15,
+    type: "default",
+    demo: demo
   };
   render() {
     const position = [demo[0].lat, demo[0].lng];
     return (
       <div className="App">
+      <button onClick={() => this.setState({demo: demo2})}>sds</button>
         <Map center={position} zoom={this.state.zoom}>
           <LeafletReactTrackPlayer
-            track={demo}
+            track={this.state.demo}
             optionMultyIdxFn={function(p) {
               return p.status;
             }}
@@ -27,7 +31,7 @@ class App extends Component {
               { color: "#D10B41" },
               { color: "#78c800" }
             ]}
-            progressFormat={"distance"}
+            progressFormat={this.state.type}
             customMarker={true}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
