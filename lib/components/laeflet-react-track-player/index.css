@@ -1,0 +1,133 @@
+
+.leaflet-div-icon{
+    background: transparent;
+    border: 0;
+}
+
+.custom-marker-player.default {
+    background-size: 70% 100% !important;
+    margin-top:-17.5px;
+}
+
+.leaflet-react-track-player {
+    width: 680px;
+    height: 50px;
+    background: #ffffff;
+    border: 1px solid #ccc;
+}
+
+.tp-buttons {
+    float: left;
+    height: 50px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.tp_button {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60%;
+    cursor: pointer;
+}
+
+.tp_button.play {
+    background-image: url("./icon/play.svg");
+}
+
+.tp_button.pause {
+    background-image: url("./icon/pause.svg");
+    background-size: 50%;
+}
+
+.tp_button.stop {
+    background-image: url("./icon/stop.svg");
+    background-size: 50%;
+}
+
+.tp_button.prev {
+    background-image: url("./icon/prev.svg");
+}
+
+.tp_button.next {
+    background-image: url("./icon/next.svg");
+}
+
+.tp_button.speed {
+    background-image: url("./icon/speed.svg");
+}
+
+.tp_button:last-child {
+    margin-right: 0;
+}
+
+.tp_track-line {
+    width: 460px;
+    height: 50px;
+    padding: 20px 20px 20px 10px;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-left: 220px;
+}
+
+.tp_track-points {
+    width: 100%;
+    height: 5px;
+    position: relative;
+}
+
+.tp_track-points_item {
+    width: 1px;
+    height: 5px;
+    background: #000;
+    position: absolute;
+    top: 0;
+}
+
+.tp_track-line_line {
+    width: 100%;
+    height: 10px;
+    background-color: #cccccc;
+    position: relative;
+    overflow: hidden;
+}
+
+.tp_track-line_active {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: deepskyblue;
+}
+
+.tp-speed {
+    position: absolute;
+    width: 28px;
+    height: 85px;
+    border: 1px solid #ccc;
+    top: -76px;
+    background: #fff;
+    right: 25px;
+}
+
+.tp-speed-item{
+    display: block;
+    width: 100%;
+    font-size: 10px;
+    line-height: 17px;
+    height: 17px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.tp-speed-item:last-child {
+    border-bottom: 0;
+}
+.tp-speed-item.active {
+    background: #81d681;
+}
