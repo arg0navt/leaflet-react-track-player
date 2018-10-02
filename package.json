@@ -72,12 +72,17 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
-    ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "components/ColoredCalendar/([^\\.]*)$": "<rootDir>/src/node_modules/components/ColoredCalendar/$1.js"
     },
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "moduleFileExtensions": [
       "web.js",
       "js",
@@ -90,7 +95,9 @@
   },
   "babel": {
     "presets": [
-      "es2015", "react", "stage-0"
+      "es2015",
+      "react",
+      "stage-0"
     ]
   },
   "eslintConfig": {
@@ -99,6 +106,7 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "react-test-renderer": "^16.5.2"
   }
 }
