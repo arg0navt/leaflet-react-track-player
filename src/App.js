@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import LeafletReactTrackPlayer from "components/laeflet-react-track-player";
-import demo from "./demo2";
-import demo2 from "./demo";
+import demo from "./demo";
 import { Map, TileLayer } from "react-leaflet";
 
 class App extends Component {
@@ -10,14 +9,13 @@ class App extends Component {
     lat: 47.445745,
     lng: 40.272891666666666,
     zoom: 15,
-    type: "default",
+    type: "distance",
     demo: demo
   };
   render() {
     const position = [demo[0].lat, demo[0].lng];
     return (
       <div className="App">
-      <button onClick={() => this.setState({demo: demo2})}>sds</button>
         <Map center={position} zoom={this.state.zoom}>
           <LeafletReactTrackPlayer
             track={this.state.demo}
