@@ -2,16 +2,15 @@
 
 # dependencies
 /node_modules
+/publick
+/config
+/scripts
 
 # testing
 /coverage
 
 # production
 /build
-/publick
-/config
-/scripts
-
 
 #idea
 /.idea
