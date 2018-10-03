@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.0" id="Слой_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-155.5001984 61.8872681 25 42" enable-background="new -155.5001984 61.8872681 25 42" xml:space="preserve">
+<switch>
+	<foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+		<i:pgfRef  xlink:href="#adobe_illustrator_pgf">
+		</i:pgfRef>
+	</foreignObject>
+	<g i:extraneous="self">
+		<title>Group 8</title>
+		<desc>Created with Sketch.</desc>
+		<rect x="-146.6990051" y="67.5074692" width="7.3986015" height="3.1738243"/>
+		<rect x="-154.5771179" y="88.9530258" width="23.1538467" height="7.4075923"/>
+		<rect x="-155.5001984" y="73.2886887" width="25" height="10.5054951"/>
+		<polygon fill="#222222" points="-134.8730316,61.8872681 -135.6862183,62.9711876 -136.497406,62.9711876
+			-137.3105927,62.9711876 -138.1227722,62.9711876 -138.9359589,62.9711876 -139.7491455,62.9711876 -140.5613403,62.9711876 
+			-141.374527,62.9711876 -142.1877136,62.9711876 -142.9998932,62.9711876 -143.8130798,62.9711876 -144.6252747,62.9711876 
+			-145.4384613,62.9711876 -146.2506409,62.9711876 -147.0638275,62.9711876 -147.8770142,62.9711876 -148.689209,62.9711876 
+			-149.5023956,62.9711876 -150.3145905,62.9711876 -151.1277771,61.8872681 -151.9409637,62.9711876 -152.3105927,68.2898636 
+			-133.6902008,68.2898636 -134.059845,62.9711876 		"/>
+		<rect x="-151.9607391" y="71.7052689" fill="#222222" width="17.9220791" height="26.5964031"/>
+		<rect x="-144.2524414" y="75.9809952" fill="#FFFFFF" width="2.5044956" height="27.5744247"/>
+		<path d="M-141.3939972,103.9109268h-3.2135773V75.6276855h3.2135773V103.9109268z M-143.8993073,103.202652h1.7970428V76.3359604
+			h-1.7970428V103.202652z"/>
+		<rect x="-148.3223724" y="69.8651123" fill="#FFFFFF" width="10.6443558" height="9.87113"/>
+		<path d="M-137.3238373,80.0905075h-11.3529053V69.5107574h11.3529053V80.0905075z M-147.9684753,79.3822327h9.9363556v-9.1632004
+			h-9.9363556V79.3822327z"/>
+	</g>
+</switch>
+</svg>
