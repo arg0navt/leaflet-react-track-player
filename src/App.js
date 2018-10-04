@@ -9,12 +9,12 @@ class App extends Component {
   state = {
     lat: 47.445745,
     lng: 40.272891666666666,
-    zoom: 15,
+    zoom: 14,
     type: "default",
     demo: demo
   };
   render() {
-    const position = [demo[0].lat, demo[0].lng];
+    const position = [demo[demo.length - 1].lat, demo[demo.length - 1].lng];
     return (
       <div className="App">
         <button onClick={() => this.setState({demo: demo2})}>add</button>
