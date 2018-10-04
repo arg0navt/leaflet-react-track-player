@@ -33,7 +33,7 @@ class App extends Component {
             ]}
             progressFormat={this.state.type}
             customMarker={true}
-            startPosition={40}
+            startPosition={"full"}
             streamData={true}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
