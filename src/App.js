@@ -9,7 +9,7 @@ class App extends Component {
     lat: 47.445745,
     lng: 40.272891666666666,
     zoom: 15,
-    type: "distance",
+    type: "default",
     demo: demo
   };
   render() {
@@ -31,6 +31,7 @@ class App extends Component {
             ]}
             progressFormat={this.state.type}
             customMarker={true}
+            startPosition={40}
             changeCourseCustomMarker={true}
             markerIcon={"/img/mech.svg"}
           />
