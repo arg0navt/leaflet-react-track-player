@@ -5,7 +5,7 @@
 
 ------------
 
-This is package was created how plugin to [react-leaflet](https://github.com/PaulLeCam/react-leaflet) . It create player which animates polyline and control it. It gives functions stop, play, next point, prev point, and control to speed of polyline. It have dynamic progress of line, multiсolor
+This is package was created as a plugin for [react-leaflet](https://github.com/PaulLeCam/react-leaflet) . It creates a player which animates along a polyline. It provides functions for pause, play and playback speed. The track colors may be customized.
 
 #### Install
 
@@ -70,18 +70,17 @@ yarn add leaflet-react-track-player
     
 | Prop | Type  | Default  | Description |
 | :------------ | :------------ | :------------ | :------------ |
-| track  | Array  | [] | It is points for polyline  |
-| optionMultyIdxFn  | Function  | () => {}  | Function split track on colors  |
-| optionsMulty  | Array  | []  | It is colors for split |
-| customMarker  | Boolean  | false  | Need setting your icon? |
-| iconCustomMarker  | String  | ""  | Path to your icon |
-| customCourse | Boolean  | false | Need changing course of marker? You need have course in points. Look at demo |
-| timeFormat | String  | "YYMMDDHHmmss000" | Time format is for mode "time". You need times stamp in points. Look at demo |
-| styleMarker | String  | "" | It is style for marker |
-| speedArray | Array  | [] | It is array with sizes  |
-| progressFormat | String  | "default" | Mode "default" use number point how value for progress. Mode "time" use time stamp how value for progress. Mode "distance" use range in meters how value for progress   |
-| callbackFinish | Function  | () => {} | It is callback after finish  |
-| callbackNext | Function  | () => {} | It is callback after switch on next point  |
-| callbackPrev | Function  | () => {} | It is callback after switch on prev point  |
-| callbackSpeed | Function  | () => {} | It is callback after change speed  |
-| callbackSpeed | Function  | () => {} | It is callback after animation  |
+| track  | Array  | [] | The points that define the polyline  |
+| optionMultyIdxFn  | Function  | () => {}  | Function to defined track segment colors  |
+| optionsMulty  | Array  | []  | The colors used for track segments |
+| customMarker  | Boolean  | false  | Should use a custom marker icon |
+| iconCustomMarker  | String  | ""  | Path to your marker icon |
+| customCourse | Boolean  | false | Need changing course of marker? You need have course in points. See demo |
+| timeFormat | String  | "YYMMDDHHmmss000" | Time format is for mode "time". You need times stamps in points. See demo |
+| styleMarker | String  | "" | Inline style for the marker |
+| speedArray | Array  | [] | List of speeds  |
+| progressFormat | String  | "default" | Mode "default" uses the number of points as the value for progress. Mode "time" uses time stamps as the value for progress. Mode "distance" uses range in meters as the value for progress |
+| callbackFinish | Function  | () => {} | Called after one full track run  |
+| callbackNext | Function  | () => {} | Called after next point in the polyline is reached  |
+| callbackPrev | Function  | () => {} | Called after previous point in the polyline is reached   |
+| callbackSpeed | Function  | () => {} | Called after changing spead  |
