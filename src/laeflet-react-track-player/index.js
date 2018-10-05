@@ -72,13 +72,10 @@ class LeafletReactTrackPlayer extends MapLayer {
         iconSize: [35, 35]
       });
     const course = this.props.customMarker && this.props.customCourse && this.state.track[0] && this.state.track[0].course ? this.state.track[0].course : null;
-    if (this.state.track[0]) {
-      const finishMarker = L.marker(this.props.track[0], {
-        icon: this.createIcon(course)
-      });
-      this.props.leaflet.map.addLayer(finishMarker);
-    }
-
+    const finishMarker = L.marker(this.props.track[0], {
+      icon: this.createIcon(course)
+    });
+    this.props.leaflet.map.addLayer(finishMarker);
     // polyline
     const snakePolyline = L.multiOptionsPolyline(this.props.track, {
       ...paramsForMultiPolyline(this.props),
@@ -504,7 +501,6 @@ class LeafletReactTrackPlayer extends MapLayer {
 }
 
 LeafletReactTrackPlayer.defaultProps = {
-  track: [],
   useControl: true,
   useInformationPanel: false,
   optionMultyIdxFn: function() {},
