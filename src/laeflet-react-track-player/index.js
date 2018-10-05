@@ -71,10 +71,13 @@ class LeafletReactTrackPlayer extends MapLayer {
         }deg)${this.props.styleMarker}"></div>`,
         iconSize: [35, 35]
       });
-    const finishMarker = L.marker(this.props.track[0], {
-      icon: this.createIcon(this.props.track[0].course)
-    });
-    this.props.leaflet.map.addLayer(finishMarker);
+    const course = this.props.customMarker && this.props.customCourse && this.state.track[0] && this.state.track[0].course ? this.state.track[0].course : null;
+    if (this.state.track[0]) {
+      const finishMarker = L.marker(this.props.track[0], {
+        icon: this.createIcon(course)
+      });
+      this.props.leaflet.map.addLayer(finishMarker);
+    }
 
     // polyline
     const snakePolyline = L.multiOptionsPolyline(this.props.track, {
