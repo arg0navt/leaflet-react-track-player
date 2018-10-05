@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import LeafletReactTrackPlayer from "components/laeflet-react-track-player";
+import LeafletReactTrackPlayer from "./laeflet-react-track-player";
 import demo from "./demo";
 import { Map, TileLayer } from "react-leaflet";
 
@@ -9,7 +9,7 @@ class App extends Component {
     lat: 47.445745,
     lng: 40.272891666666666,
     zoom: 14,
-    type: "distance",
+    type: "time",
     demo: demo
   };
   render() {

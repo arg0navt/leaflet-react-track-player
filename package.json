@@ -23,7 +23,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lib": "babel src/node_modules --out-dir lib --copy-files"
+    "lib": "babel src/laeflet-react-track-player --out-dir lib --copy-files"
   },
   "jest": {
     "collectCoverageFrom": [
