@@ -61,8 +61,16 @@
     background-image: url("./icon/speed.svg");
 }
 
+.tp_button.stream {
+    background-image: url("./icon/stream.svg");
+}
+
 .tp_button:last-child {
     margin-right: 0;
+}
+
+.tp_button:disabled {
+    opacity: .3;
 }
 
 .tp_track-line {
