@@ -10,7 +10,8 @@ class App extends Component {
     lng: 40.272891666666666,
     zoom: 14,
     type: "time",
-    demo: demo
+    demo: demo,
+    icon: "/img/mech.svg"
   };
   render() {
     const position = [demo[demo.length - 1].lat, demo[demo.length - 1].lng];
@@ -34,7 +35,7 @@ class App extends Component {
             customMarker={true}
             streamData={true}
             changeCourseCustomMarker={true}
-            iconCustomMarker={"/img/mech.svg"}
+            iconCustomMarker={this.state.icon}
           />
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

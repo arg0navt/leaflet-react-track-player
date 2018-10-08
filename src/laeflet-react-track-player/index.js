@@ -238,6 +238,9 @@ class LeafletReactTrackPlayer extends MapLayer {
         this.updateProgressByTime(toProps, distanceNewPoints);
       }
     }
+    if (fromProps.iconCustomMarker !== toProps.iconCustomMarker) {
+      this.leafletElement.finishMarker._icon.children[0].style.background = `url(${toProps.iconCustomMarker}) center center no-repeat`;
+    }
   }
 
   updateProgressByDefault = (from, to, newDistance) => {
