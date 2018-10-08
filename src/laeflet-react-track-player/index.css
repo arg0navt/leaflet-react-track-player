@@ -1,6 +1,6 @@
 
 .leaflet-div-icon{
-    background: transparent;
+    background: transparent !important;
     border: 0;
 }
 
