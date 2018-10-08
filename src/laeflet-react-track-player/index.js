@@ -64,7 +64,7 @@ class LeafletReactTrackPlayer extends MapLayer {
           !this.props.customMarker ? " default" : ""
         }" style="background: url('${
           this.props.customMarker
-            ? this.props.markerIcon
+            ? this.props.iconCustomMarker
             : "https://unpkg.com/leaflet@1.3.4/dist/images/marker-icon-2x.png"
         }') no-repeat center; height: 100%; transform: rotate(${
           this.props.customMarker && this.props.customCourse ? rotate : 0
