@@ -1,6 +1,6 @@
 import L from "leaflet";
 
-const MultiOptionsPolyline = L.FeatureGroup.extend({
+const MultiColorsPolyline = L.FeatureGroup.extend({
 
     initialize: function (latlngs, options) {
         var copyBaseOptions = options.multiOptions.copyBaseOptions;
@@ -83,8 +83,8 @@ const MultiOptionsPolyline = L.FeatureGroup.extend({
     }
 });
 
-L.MultiOptionsPolyline = MultiOptionsPolyline;
+L.MultiColorsPolyline = MultiColorsPolyline;
 
-L.multiOptionsPolyline = function (latlngs, options) {
-    return new MultiOptionsPolyline(latlngs, options);
+L.multiColorsPolyline = function (latlngs, options) {
+    return new MultiColorsPolyline(latlngs, options);
 };

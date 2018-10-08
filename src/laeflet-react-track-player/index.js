@@ -71,13 +71,19 @@ class LeafletReactTrackPlayer extends MapLayer {
         }deg)${this.props.styleMarker}"></div>`,
         iconSize: [35, 35]
       });
-    const course = this.props.customMarker && this.props.customCourse && this.state.track[0] && this.state.track[0].course ? this.state.track[0].course : null;
+    const course =
+      this.props.customMarker &&
+      this.props.customCourse &&
+      this.state.track[0] &&
+      this.state.track[0].course
+        ? this.state.track[0].course
+        : null;
     const finishMarker = L.marker(this.props.track[0], {
       icon: this.createIcon(course)
     });
     this.props.leaflet.map.addLayer(finishMarker);
     // polyline
-    const snakePolyline = L.multiOptionsPolyline(this.props.track, {
+    const snakePolyline = L.multiColorsPolyline(this.props.track, {
       ...paramsForMultiPolyline(this.props),
       timeFormat: this.props.timeFormat,
       progressFormat: this.props.progressFormat,
@@ -130,23 +136,32 @@ class LeafletReactTrackPlayer extends MapLayer {
   nextPoint = (point, index) => {
     // callback: add new point to step of animation
     if (this.state.options.progressFormat === "default") {
-      this.setState({
-        activePoint: point,
-        activePosition: (index / this.state.track.length) * 100
-      }, () => this.props.callbackCourse(point, index));
+      this.setState(
+        {
+          activePoint: point,
+          activePosition: (index / this.state.track.length) * 100
+        },
+        () => this.props.callbackCourse(point, index)
+      );
     } else if (this.state.options.progressFormat === "time") {
       const thisDistance =
         moment(point.t, this.props.timeFormat) -
         moment(this.state.track[0].t, this.props.timeFormat);
-      this.setState({
-        activePoint: point,
-        activeTimeStamp: point.t,
-        activePosition: thisDistance / (this.state.durationTrack / 100)
-      }, () => this.props.callbackCourse(point, index));
+      this.setState(
+        {
+          activePoint: point,
+          activeTimeStamp: point.t,
+          activePosition: thisDistance / (this.state.durationTrack / 100)
+        },
+        () => this.props.callbackCourse(point, index)
+      );
     } else if (this.state.options.progressFormat === "distance") {
-      this.setState({
-        activePoint: point
-      }, () => this.props.callbackCourse(point, index));
+      this.setState(
+        {
+          activePoint: point
+        },
+        () => this.props.callbackCourse(point, index)
+      );
     }
     this.leafletElement.finishMarker.setIcon(this.createIcon(point.course));
   };
@@ -188,11 +203,11 @@ class LeafletReactTrackPlayer extends MapLayer {
       const newPointsPolyline =
         this.props.progressFormat === "default" ||
         this.props.progressFormat === "distance"
-          ? L.multiOptionsPolyline(
+          ? L.multiColorsPolyline(
               toProps.track.slice(fromProps.track.length - 1),
               paramsForMultiPolyline(this.props)
             )
-          : L.multiOptionsPolyline(
+          : L.multiColorsPolyline(
               toProps.track.filter(
                 item =>
                   Number(item.t) >
@@ -477,21 +492,23 @@ class LeafletReactTrackPlayer extends MapLayer {
                   className="tp_track-line_active"
                 />
               </div>
-              <div
-                className="tp_track-points"
-                ref={e => {
-                  this.pointsLine = e;
-                }}
-              >
-                <Dots
-                  key={"markers"}
-                  track={this.state.track}
-                  type={this.state.options.progressFormat}
-                  timeFormat={this.props.timeFormat}
-                  maxDistance={this.state.maxDistance}
-                  durationTrack={this.state.durationTrack}
-                />
-              </div>
+              {this.props.showDots ? (
+                <div
+                  className="tp_track-points"
+                  ref={e => {
+                    this.pointsLine = e;
+                  }}
+                >
+                  <Dots
+                    key={"markers"}
+                    track={this.state.track}
+                    type={this.state.options.progressFormat}
+                    timeFormat={this.props.timeFormat}
+                    maxDistance={this.state.maxDistance}
+                    durationTrack={this.state.durationTrack}
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         ) : null}
@@ -514,6 +531,7 @@ LeafletReactTrackPlayer.defaultProps = {
   progressFormat: "default",
   startPosition: 0,
   streamData: false,
+  showDots: false,
   callbackFinish: function() {},
   callbackPrev: function() {},
   callbackNext: function() {},
@@ -539,6 +557,7 @@ LeafletReactTrackPlayer.propTypes = {
   callbackFinish: PropTypes.func,
   startPosition: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   streamData: PropTypes.bool,
+  showDots: PropTypes.bool,
   callbackNext: PropTypes.func,
   callbackPrev: PropTypes.func,
   callbackSpeed: PropTypes.func,
