@@ -80,7 +80,12 @@ yarn add leaflet-react-track-player
 | styleMarker | String  | "" | Inline style for the marker |
 | speedArray | Array  | [] | List of speeds  |
 | progressFormat | String  | "default" | Mode "default" uses the number of points as the value for progress. Mode "time" uses time stamps as the value for progress. Mode "distance" uses range in meters as the value for progress |
+| useControl | Bollean | false | Show or hide control panel |
+| streamData | Bollean | false | Update player after add new points |
+| showDots | Bollean | false | Show or hide points in progress line |
 | callbackFinish | Function  | () => {} | Called after one full track run  |
 | callbackNext | Function  | () => {} | Called after next point in the polyline is reached  |
 | callbackPrev | Function  | () => {} | Called after previous point in the polyline is reached   |
 | callbackSpeed | Function  | () => {} | Called after changing spead  |
+| callbackFly | Function | () => {} | Called after fly polyline |
+| callbackStream | Function | () => {} | Called after changing stream mode |
