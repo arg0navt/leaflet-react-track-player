@@ -52,7 +52,7 @@ yarn add leaflet-react-track-player
                 progressFormat={this.state.type}
                 customMarker={true}
                 changeCourseCustomMarker={true}
-                markerIcon={"/img/mech.svg"}
+                iconCustomMarker={"/img/mech.svg"}
               />
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
