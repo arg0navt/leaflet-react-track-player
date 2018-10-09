@@ -267,9 +267,14 @@ L.LayerGroup.include({
   },
 
   snakePlay: function() {
-    this._snakingLayers.map(item => {
+    const findLast = this._snakingLayers.some((itm) => itm._snaking);
+    var goPlay = null;
+    this._snakingLayers.map(function (item) {
       if (item._map && item._snaking) item.snakePlay();
     });
+    if (findLast) {
+      if(goPlay) goPlay.snakePlay(); 
+    } else this._snakeNext();
   },
   // change position. This function stopping work of animation and initiate polylines with default state. Need timestamp
   changePosition: function(value) {
@@ -440,18 +445,19 @@ L.LayerGroup.include({
   _initiateStartPosition: function() {
     if (this._options.startPosition === "full") {
       if (this._options.progressFormat === "default") {
-        this.changePosition(this._originalLatlngs.length - 1);
+        this.changePosition(this._originalLatlngs.length);
       } else if (this._options.progressFormat === "distance") {
         const max = this._detailDistance.reduce((result, item) => {
           result = result + item;
           return result;
         }, 0);
-        this.changePosition(max);
+        this.changePosition(max + 1);
       } else if (this._options.progressFormat === "time") {
         this.changePosition(
-          this._originalLatlngs[this._originalLatlngs.length - 1].t
+          this._originalLatlngs[this._originalLatlngs.length - 1].t + 1
         );
       }
+      this._snaking = false;
       this._end(true);
     } else {
       this.changePosition(this._options.startPosition);
@@ -460,7 +466,9 @@ L.LayerGroup.include({
   },
 
   _snakeNext: function() {
-    console.log(this);
+    if(!this._snaking && this._snakingLayersDone < this._snakingLayers.length) {
+      this._snaking = true;
+    }
     if (this._snakingLayersDone >= this._snakingLayers.length) {
       this._end(true);
       this._snaking = false;
@@ -487,6 +495,8 @@ L.LayerGroup.include({
       });
       this._snakingLayers[prevRange + index].removePosition();
     });
-    this.snakePlay();
+    if (!this._snaking) {
+      this.snakePlay();
+    }
   }
 });
