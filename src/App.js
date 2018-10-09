@@ -33,7 +33,8 @@ class App extends Component {
             useControl={true}
             progressFormat={this.state.type}
             customMarker={true}
-            streamData={true}
+            defaultSpeed={10}
+            streamData={false}
             changeCourseCustomMarker={true}
             iconCustomMarker={this.state.icon}
           />

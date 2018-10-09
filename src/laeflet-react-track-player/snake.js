@@ -16,6 +16,11 @@ L.Polyline.include({
   // It initialization polyline with animation
   snakeIn: function(e) {
     if (e && !this._latLngAnimation) this._latLngAnimation = e;
+    for (let i in this._eventParents) {
+      if (this._eventParents[i]._options.defaultSpeed) {
+        this._defaultSpeed = this._eventParents[i]._options.defaultSpeed;
+      }
+    }
     if (this._snaking) {
       return;
     }
@@ -142,6 +147,9 @@ L.Polyline.include({
       let forward = this.maxDistance
         ? (diff * (this.maxDistance / time)) / 1000
         : (diff * (1 / time)) / 1000;
+        if (this._defaultSpeed) {
+          forward = diff * (this._defaultSpeed * this._xSpeed) / 1000
+        }
       this._snakingTime = this._now;
       this._latlngs.pop();
       this._forward = forward;
@@ -435,6 +443,7 @@ L.LayerGroup.include({
     }
     this.clearLayers();
     this._detailDistance = this._detailData.map(polyline => getDistance(polyline));
+    console.log(this);
     if (this._options.startPosition) {
       this._initiateStartPosition();
     } else {

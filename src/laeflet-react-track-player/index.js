@@ -74,9 +74,9 @@ class LeafletReactTrackPlayer extends MapLayer {
     const course =
       this.props.customMarker &&
       this.props.customCourse &&
-      this.state.track[0] &&
-      this.state.track[0].course
-        ? this.state.track[0].course
+      this.props.track[0] &&
+      this.props.track[0].course
+        ? this.props.track[0].course
         : null;
     const finishMarker = L.marker(this.props.track[0], {
       icon: this.createIcon(course)
@@ -87,7 +87,8 @@ class LeafletReactTrackPlayer extends MapLayer {
       ...paramsForMultiPolyline(this.props),
       timeFormat: this.props.timeFormat,
       progressFormat: this.props.progressFormat,
-      startPosition: this.props.startPosition
+      startPosition: this.props.startPosition,
+      defaultSpeed: this.props.defaultSpeed,
     });
     this.props.leaflet.map.addLayer(snakePolyline);
     return {
@@ -561,6 +562,7 @@ LeafletReactTrackPlayer.propTypes = {
   startPosition: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   streamData: PropTypes.bool,
   showDots: PropTypes.bool,
+  defaultSpeed: PropTypes.number,
   callbackNext: PropTypes.func,
   callbackPrev: PropTypes.func,
   callbackSpeed: PropTypes.func,
