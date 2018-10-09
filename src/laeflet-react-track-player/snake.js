@@ -443,7 +443,6 @@ L.LayerGroup.include({
     }
     this.clearLayers();
     this._detailDistance = this._detailData.map(polyline => getDistance(polyline));
-    console.log(this);
     if (this._options.startPosition) {
       this._initiateStartPosition();
     } else {
