@@ -417,6 +417,12 @@ class LeafletReactTrackPlayer extends MapLayer {
     this.setState({ activeStream: !this.state.activeStream });
   };
 
+  componentWillUnmount() {
+    for (let key in this.leafletElement) {
+      this.props.leaflet.map.removeLayer(this.leafletElement[key])
+    }
+  }
+
   render() {
     return (
       <Control position="bottomleft">
