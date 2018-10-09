@@ -210,7 +210,7 @@ class LeafletReactTrackPlayer extends MapLayer {
           : L.multiColorsPolyline(
               toProps.track.filter(
                 item =>
-                  Number(item.t) >
+                  Number(item.t) >=
                   Number(fromProps.track[fromProps.track.length - 1].t)
               ),
               paramsForMultiPolyline(this.props)
