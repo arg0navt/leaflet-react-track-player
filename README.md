@@ -83,6 +83,7 @@ yarn add leaflet-react-track-player
 | useControl | Bollean | false | Show or hide control panel |
 | streamData | Bollean | false | Update player after add new points |
 | showDots | Bollean | false | Show or hide points in progress line |
+| defaultSpeed | Number | undefined | Constant for speed (pixel/second) |
 | callbackFinish | Function  | () => {} | Called after one full track run  |
 | callbackNext | Function  | () => {} | Called after next point in the polyline is reached  |
 | callbackPrev | Function  | () => {} | Called after previous point in the polyline is reached   |
