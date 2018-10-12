@@ -14,7 +14,7 @@ L.Polyline.include({
   _latLngAnimation: null,
 
   // It initialization polyline with animation
-  snakeIn: function(e) {
+  snakePlayer: function(e) {
     if (e && !this._latLngAnimation) this._latLngAnimation = e;
     for (let i in this._eventParents) {
       if (this._eventParents[i]._options.defaultSpeed) {
@@ -420,7 +420,7 @@ L.LayerGroup.include({
     });
   },
 
-  snakeIn: function(events) {
+  snakePlayer: function(events) {
     if (!this._callbackChangePosition && events.change)
       this._callbackChangePosition = events.change;
     if (!this._latLngAnimation && events.fly) {
@@ -486,7 +486,7 @@ L.LayerGroup.include({
     this._snakingLayersDone++;
     if (!this.hasLayer(currentLayer)) {
       this.addLayer(currentLayer);
-      currentLayer.snakeIn(this._latLngAnimation);
+      currentLayer.snakePlayer(this._latLngAnimation);
     } else currentLayer.snakePlay();
   },
 

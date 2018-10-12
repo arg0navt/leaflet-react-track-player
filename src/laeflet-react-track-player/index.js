@@ -102,7 +102,7 @@ class LeafletReactTrackPlayer extends MapLayer {
   }
 
   initSnake = () => {
-    this.leafletElement.snakePolyline.snakeIn({
+    this.leafletElement.snakePolyline.snakePlayer({
       fly: point => this.flyTrack(point),
       nextPoint: (point, index) => this.nextPoint(point, index),
       finish: lastPosition => this.finishTrack(lastPosition),
