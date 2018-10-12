@@ -32,7 +32,7 @@ L.Polyline.include({
     this._snakingVertices = this._snakingDistance = 0;
     this._latlngs = [this._snakeLatLngs[0], this._snakeLatLngs[0]];
     this._nextPoint();
-    this._snake();
+    this._snakeRun();
     this.fire("snakestart");
     return this;
   },
@@ -114,7 +114,7 @@ L.Polyline.include({
     this._play = true;
     this._now = this._snakingTime;
     this.startTime();
-    this._snake();
+    this._snakeRun();
   },
 
   changeSpeed: function(xSpeed) {
@@ -133,7 +133,7 @@ L.Polyline.include({
   },
 
   // new iteration of animation
-  _snake: function() {
+  _snakeRun: function() {
     if (!this.maxDistance) {
       this.maxDistance = this._snakeLatLngs[0].distanceTo(
         this._snakeLatLngs[1]
@@ -153,11 +153,11 @@ L.Polyline.include({
       this._snakingTime = this._now;
       this._latlngs.pop();
       this._forward = forward;
-      return this._snakeForward(forward);
+      return this._snakeForwardRun(forward);
     }
   },
 
-  _snakeForward: function(forward) {
+  _snakeForwardRun: function(forward) {
     if (!this._now) this.startTime();
     if (this._play && this._map) {
       let currPoint = this._map.latLngToContainerPoint(
@@ -184,7 +184,7 @@ L.Polyline.include({
         }
         this._nextPoint();
         this._snakingDistance -= this.maxDistance;
-        return this._snakeForward(forward);
+        return this._snakeForwardRun(forward);
       }
       this._snakingDistance += forward;
       let percent = this.maxDistance
@@ -254,7 +254,7 @@ L.Polyline.include({
     this._snaking = false;
     this.setLatLngs(this._snakeLatLngs);
     for (let i in this._eventParents) {
-      this._eventParents[i]._snakeNext();
+      this._eventParents[i]._snakeNextPolyline();
     }
   }
 });
@@ -282,7 +282,7 @@ L.LayerGroup.include({
     });
     if (findLast) {
       if(goPlay) goPlay.snakePlay(); 
-    } else this._snakeNext();
+    } else this._snakeNextPolyline();
   },
   // change position. This function stopping work of animation and initiate polylines with default state. Need timestamp
   changePosition: function(value) {
@@ -446,7 +446,7 @@ L.LayerGroup.include({
     if (this._options.startPosition) {
       this._initiateStartPosition();
     } else {
-      return this._snakeNext();
+      return this._snakeNextPolyline();
     }
   },
 
@@ -473,7 +473,7 @@ L.LayerGroup.include({
     }
   },
 
-  _snakeNext: function() {
+  _snakeNextPolyline: function() {
     if(!this._snaking && this._snakingLayersDone < this._snakingLayers.length) {
       this._snaking = true;
     }
