@@ -1,5 +1,6 @@
 # Leaflet-react-track-player
 [![Build Status](https://travis-ci.org/argonavt11/leaflet-react-track-player.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
+[![Coverage Status](https://coveralls.io/repos/github/argonavt11/leaflet-react-track-player/badge.svg?branch=master)](https://coveralls.io/github/argonavt11/leaflet-react-track-player?branch=master)
 [![CircleCI](https://circleci.com/gh/argonavt11/leaflet-react-track-player.svg?style=svg)](https://circleci.com/gh/argonavt11)
 
 ![](https://github.com/argonavt11/leaflet-react-track-player/blob/master/public/img/demo.gif?raw=true)
