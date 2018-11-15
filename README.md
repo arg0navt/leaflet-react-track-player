@@ -1,5 +1,6 @@
 # Leaflet-react-track-player
 [![Build Status](https://travis-ci.org/argonavt11/leaflet-react-track-player.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
+[![CircleCI](https://circleci.com/gh/goldhand/sw-precache-webpack-plugin.svg?style=svg)](https://circleci.com/gh/argonavt11)
 
 ![](https://github.com/argonavt11/leaflet-react-track-player/blob/master/public/img/demo.gif?raw=true)
 
