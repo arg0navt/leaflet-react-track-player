@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
 import L from "leaflet";
-import Control from "react-leaflet-control";
+import Control from "@skyeer/react-leaflet-custom-control";
 import Dots from "./dots";
 import { MapLayer, withLeaflet } from "react-leaflet";
 import { findLastIndex } from "lodash";
