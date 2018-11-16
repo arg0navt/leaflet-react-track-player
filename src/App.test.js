@@ -40,6 +40,4 @@ it("render default", () => {
   );
   //   const output = shallow(wrapper);
   expect(wrapper);
-  console.log(wrapper.find(LeafletReactTrackPlayer).some(".play"));
-  expect(wrapper.find(LeafletReactTrackPlayer).some(".play"));
 });
