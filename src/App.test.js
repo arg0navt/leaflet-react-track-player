@@ -8,8 +8,6 @@ import LeafletReactTrackPlayer from "./laeflet-react-track-player";
 configure({ adapter: new Adapter() });
 
 it("render default", () => {
-  const div = global.document.createElement("div");
-  global.document.body.appendChild(div);
   const wrapper = shallow(
     <div>
       <Map center={[47.445745, 40.272891666666666]} zoom={10}>
@@ -27,7 +25,7 @@ it("render default", () => {
           ]}
           useControl={true}
           progressFormat={"time"}
-          customMarker={true}
+          customMarker={"hh"}
           defaultSpeed={10}
           streamData={false}
           changeCourseCustomMarker={true}
@@ -41,5 +39,7 @@ it("render default", () => {
     </div>
   );
   //   const output = shallow(wrapper);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper);
+  console.log(wrapper.find(LeafletReactTrackPlayer).some(".play"));
+  expect(wrapper.find(LeafletReactTrackPlayer).some(".play"));
 });
