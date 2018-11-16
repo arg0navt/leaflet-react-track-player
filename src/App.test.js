@@ -25,7 +25,7 @@ it("render default", () => {
           ]}
           useControl={true}
           progressFormat={"time"}
-          customMarker={"hh"}
+          customMarker={true}
           defaultSpeed={10}
           streamData={false}
           changeCourseCustomMarker={true}
