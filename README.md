@@ -20,7 +20,7 @@ yarn add leaflet-react-track-player
 
 ```javascript
 import React, { Component } from "react";
-import LeafletReactTrackPlayer from "laeflet-react-track-player";
+import LeafletReactTrackPlayer from "leaflet-react-track-player";
 import demo from "./demo";
 import { Map, TileLayer } from "react-leaflet";
 
