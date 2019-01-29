@@ -206,7 +206,7 @@ L.Polyline.include({
       }
       this.setLatLngs(this._latlngs);
       this.fire("snake");
-      L.Util.requestAnimFrame(this._snake, this);
+      L.Util.requestAnimFrame(this._snakeRun, this);
     }
   },
 
