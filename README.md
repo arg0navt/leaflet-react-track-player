@@ -1,10 +1,10 @@
 # Leaflet-react-track-player
 
-[![Build Status](https://travis-ci.org/argonavt11/leaflet-react-track-player.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
-[![CircleCI](https://circleci.com/gh/argonavt11/leaflet-react-track-player.svg?style=svg)](https://circleci.com/gh/argonavt11)
+[![Build Status](https://travis-ci.org/arg0navt/leaflet-react-track-player.svg?branch=master)](https://travis-ci.org/argonavt11/leaflet-react-track-player)
+[![CircleCI](https://circleci.com/gh/arg0navt/leaflet-react-track-player.svg?style=svg)](https://circleci.com/gh/argonavt11)
 [![GitHub repo size in bytes](https://img.shields.io/npm/v/leaflet-react-track-player.svg?style=flat-square)](https://github.com/argonavt11/leaflet-react-track-player)
 
-![](https://github.com/argonavt11/leaflet-react-track-player/blob/master/public/img/demo.gif?raw=true)
+![](https://github.com/arg0navt/leaflet-react-track-player/blob/master/public/img/demo.gif?raw=true)
 
 ---
 
