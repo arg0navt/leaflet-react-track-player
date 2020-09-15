@@ -36,7 +36,7 @@ class LeafletReactTrackPlayer extends MapLayer {
     this.state = {
       activePosition: props.startPosition === 0,
       track: props.track,
-      active: true,
+      active: props.autoplay,
       activeStream: props.streamData,
       durationTrack:
         props.progressFormat === "time"
@@ -75,7 +75,7 @@ class LeafletReactTrackPlayer extends MapLayer {
       this.props.customMarker &&
       this.props.customCourse &&
       this.props.track[0] &&
-      this.props.track[0].course
+      this.props.track[0].course !== undefined
         ? this.props.track[0].course
         : null;
     const finishMarker = L.marker(this.props.track[0], {
@@ -90,6 +90,7 @@ class LeafletReactTrackPlayer extends MapLayer {
       startPosition: this.props.startPosition,
       defaultSpeed: this.props.defaultSpeed,
     });
+
     this.props.leaflet.map.addLayer(snakePolyline);
     return {
       snakePolyline,
@@ -103,6 +104,7 @@ class LeafletReactTrackPlayer extends MapLayer {
 
   initSnake = () => {
     this.leafletElement.snakePolyline.snakePlayer({
+      play: this.state.active,
       fly: point => this.flyTrack(point),
       nextPoint: (point, index) => this.nextPoint(point, index),
       finish: lastPosition => this.finishTrack(lastPosition),
@@ -116,6 +118,9 @@ class LeafletReactTrackPlayer extends MapLayer {
           });
       }
     });
+    if(!this.state.active) {
+      this.leafletElement.snakePolyline.snakeStop();
+    }
     this.setState({ init: true });
   };
 
@@ -528,6 +533,7 @@ class LeafletReactTrackPlayer extends MapLayer {
 }
 
 LeafletReactTrackPlayer.defaultProps = {
+  autoplay: true,
   useControl: true,
   useInformationPanel: false,
   optionMultyIdxFn: function() {},
@@ -552,6 +558,7 @@ LeafletReactTrackPlayer.defaultProps = {
 };
 
 LeafletReactTrackPlayer.propTypes = {
+  autoplay: PropTypes.bool,
   track: PropTypes.arrayOf(PropTypes.object),
   useControl: PropTypes.bool,
   useInformationPanel: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),

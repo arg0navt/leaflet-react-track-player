@@ -22,6 +22,7 @@ class App extends Component {
         <Map center={position} zoom={this.state.zoom}>
           {this.state.show ? (
             <LeafletReactTrackPlayer
+              autoplay={false}
               track={this.state.demo}
               optionMultyIdxFn={function(p) {
                 return p.status;
