@@ -5,6 +5,8 @@
   "private": false,
   "main": "lib/index.js",
   "homepage": "https://github.com/argonavt11/leaflet-react-track-player",
+  "license": "MIT",
+  "author": "Alexander Zolotarev",
   "bugs": {
     "url": "https://github.com/argonavt11/leaflet-react-track-player/issues",
     "email": "argonavt.al@yandex.ru"
